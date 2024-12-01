@@ -1,6 +1,6 @@
-# Advent of code Typescript Starter
+# Advent of Code 2024
 
-A simple [Advent of code](https://adventofcode.com/) starter project with Typescript and jest for testing.
+[Advent of code](https://adventofcode.com/)
 
 ## How to use
 
@@ -20,4 +20,4 @@ For each day, where `X` is the day number (1-25):
 
 ## Credits
 
-Some code was liberally taken from https://github.com/stemmlerjs/simple-typescript-starter after some serious head-desking
+Template source: https://github.com/LBognanni/adventofcode-typescript-starter

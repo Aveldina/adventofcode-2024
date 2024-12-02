@@ -18,6 +18,7 @@ async function runDay(dayId: number) {
   const resultPart2 = await days[dayId].partTwo();
   console.log("Part 2 result:\n");
   console.log(resultPart2);
+  console.log("\nComplete!");
 }
 
 // console.log("\n\n\n   ADVENT OF CODE \n\n");

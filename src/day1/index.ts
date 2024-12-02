@@ -29,7 +29,7 @@ class Day1 extends Day {
     }
 
     return sum.toString();
-  } 
+  }
 
   solveForPartTwo(input: string): string {
     const lines: string[] = input.split("\r\n");
@@ -48,9 +48,11 @@ class Day1 extends Day {
     let similarity: number = 0;
 
     itemSet1.map((setOneItem: string) => {
-        const matchingSetTwoItems = itemSet2.filter((setTwoItem: string) => setTwoItem === setOneItem);
-        similarity += Number(setOneItem) * matchingSetTwoItems.length;
-    })
+      const matchingSetTwoItems = itemSet2.filter(
+        (setTwoItem: string) => setTwoItem === setOneItem,
+      );
+      similarity += Number(setOneItem) * matchingSetTwoItems.length;
+    });
 
     return similarity.toString();
   }

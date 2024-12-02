@@ -1,2 +1,7 @@
 README.md
 build
+package.json
+nodemon.json
+package-lock.json
+tsconfig.json
+.eslintrc.js

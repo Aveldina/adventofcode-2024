@@ -29,10 +29,30 @@ class Day1 extends Day {
     }
 
     return sum.toString();
-  }
+  } 
 
   solveForPartTwo(input: string): string {
-    return input;
+    const lines: string[] = input.split("\r\n");
+    const items: string[][] = lines.map((line) => line.split("   "));
+    const itemSet1: string[] = new Array();
+    const itemSet2: string[] = new Array();
+
+    items.forEach((item) => {
+      itemSet1.push(item[0]);
+      itemSet2.push(item[1]);
+    });
+
+    itemSet1.sort();
+    itemSet2.sort();
+
+    let similarity: number = 0;
+
+    itemSet1.map((setOneItem: string) => {
+        const matchingSetTwoItems = itemSet2.filter((setTwoItem: string) => setTwoItem === setOneItem);
+        similarity += Number(setOneItem) * matchingSetTwoItems.length;
+    })
+
+    return similarity.toString();
   }
 }
 

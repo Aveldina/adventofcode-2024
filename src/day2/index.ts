@@ -5,7 +5,7 @@ class Day2 extends Day {
     super(2);
   }
 
-  private isRowSafe = function(row: string): boolean {
+  private isRowSafe = function (row: string): boolean {
     let isSafe: boolean = true;
     let ascendingNumbers: boolean = true;
     const numbers: number[] = row.split(" ").map((num) => parseInt(num));
@@ -29,15 +29,15 @@ class Day2 extends Day {
       }
       // distance check
       const difference: number = Math.abs(currentNum - nextNum);
-    
+
       if (difference < 1 || difference > 3) {
         isSafe = false;
       }
     });
     return isSafe;
-  }
+  };
 
-  private isRowSafeNumbers = function(numbers: number[]): boolean {
+  private isRowSafeNumbers = function (numbers: number[]): boolean {
     let isSafe: boolean = true;
     let ascendingNumbers: boolean = true;
 
@@ -60,14 +60,13 @@ class Day2 extends Day {
       }
       // distance check
       const difference: number = Math.abs(currentNum - nextNum);
-    
+
       if (difference < 1 || difference > 3) {
         isSafe = false;
       }
     });
     return isSafe;
-  }
-
+  };
 
   solveForPartOne(input: string): string {
     const lines: string[] = input.split("\r\n");
@@ -85,7 +84,6 @@ class Day2 extends Day {
   }
 
   solveForPartTwo(input: string): string {
-    
     const lines: string[] = input.split("\r\n");
     let safeReports: number = 0;
     lines.forEach((line) => {

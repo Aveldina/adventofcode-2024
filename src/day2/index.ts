@@ -5,39 +5,12 @@ class Day2 extends Day {
     super(2);
   }
 
-  private isRowSafe = function (row: string): boolean {
-    let isSafe: boolean = true;
-    let ascendingNumbers: boolean = true;
+  private isRowSafe = (row: string): boolean => {
     const numbers: number[] = row.split(" ").map((num) => parseInt(num));
-
-    if (numbers[0] > numbers[1]) {
-      ascendingNumbers = false;
-    }
-
-    numbers.forEach((currentNum, index) => {
-      if (index === numbers.length - 1) {
-        return; // Stop on the last item
-      }
-      const nextNum: number = numbers[index + 1];
-
-      // direction check
-      if (ascendingNumbers && currentNum > nextNum) {
-        isSafe = false;
-      }
-      if (!ascendingNumbers && currentNum < nextNum) {
-        isSafe = false;
-      }
-      // distance check
-      const difference: number = Math.abs(currentNum - nextNum);
-
-      if (difference < 1 || difference > 3) {
-        isSafe = false;
-      }
-    });
-    return isSafe;
+    return this.isRowSafeNumbers(numbers);
   };
 
-  private isRowSafeNumbers = function (numbers: number[]): boolean {
+  private isRowSafeNumbers = (numbers: number[]): boolean => {
     let isSafe: boolean = true;
     let ascendingNumbers: boolean = true;
 
@@ -100,7 +73,7 @@ class Day2 extends Day {
       // track how many sets of numbers are valid
       let safeLines: number = 0;
 
-      for (let index = 0; index < numbers.length; index++) {
+      numbers.forEach((num, index) => {
         let testNumbers: number[] = Array.from(numbers);
         testNumbers.splice(index, 1);
 
@@ -109,7 +82,7 @@ class Day2 extends Day {
         if (isSafe) {
           safeLines++;
         }
-      }
+      });
 
       const rowSafe = this.isRowSafe(line);
       if (safeLines < 1) {
